@@ -28,11 +28,15 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns =@JoinColumn(name = "role_id")
+            inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles;
 
     public User() {
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getId() {
@@ -120,8 +124,8 @@ public class User implements UserDetails {
 
     @Override
     public String toString() {
-        return  name + " " + lastName + ", " +
-                age + " years,  " +  "login: [" + email +
+        return name + " " + lastName + ", " +
+                age + " years,  " + "login: [" + email +
                 "]  password: [ * ]  with role >> " + roles;
     }
 }

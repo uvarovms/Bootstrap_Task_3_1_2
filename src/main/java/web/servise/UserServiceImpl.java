@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import web.dao.UserDao;
 import web.model.Role;
 import web.model.User;
-
 import java.security.Principal;
 import java.util.List;
 
@@ -60,10 +59,9 @@ public class UserServiceImpl implements UserService {
 
     public String roleToString(Principal principal) {
         StringBuilder roles = new StringBuilder();
-                    for (Role role : getUser(getUserByLogin(principal.getName()).getId()).getRoles()) {
-                roles.append(role.getName()).append("  ");
-            }
-            String strRoles = roles.toString();
-        return strRoles;
+        for (Role role : getUser(getUserByLogin(principal.getName()).getId()).getRoles()) {
+            roles.append(role.getName()).append("  ");
+        }
+        return roles.toString();
     }
 }

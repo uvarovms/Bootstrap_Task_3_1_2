@@ -44,9 +44,8 @@ public class PanelController {
         userService.addUser(user);
         return "redirect:/admin/users";
     }
-
     //Контроллер для редактиования юсера
-    @PatchMapping("/admin/edit/{id}")
+    @PatchMapping("/admin/{id}")
     public String editUser(@ModelAttribute("user") User user) {
         if (user.getRoles() != null && !user.getRoles().isEmpty()) {
             Set<Role> roleSet = new LinkedHashSet<>();
