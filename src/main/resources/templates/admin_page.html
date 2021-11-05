@@ -147,8 +147,10 @@
                                                                                         <label th:for="password"
                                                                                                class="font-weight-bold">Password<input
                                                                                                 class="form-control"
-                                                                                                type="text"
-                                                                                                name="password"></label>
+                                                                                                type="password"
+                                                                                                name="password"
+                                                                                                th:value="*{password}"
+                                                                                                required></label>
                                                                                         <h1></h1>
                                                                                         <label class="font-weight-bold">Role</label>
                                                                                         <div>

@@ -7,7 +7,6 @@ import web.model.Role;
 import web.model.User;
 import web.servise.RoleService;
 import web.servise.UserService;
-
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -33,7 +32,6 @@ public class SpringbootMainApp {
         user1.setAge((byte) 25);
         user1.setEmail("1@mail.ru");
         user1.setPassword("111");
-
         User user2 = new User();
         user2.setName("Sergey");
         user2.setLastName("Lyubov");
@@ -45,7 +43,6 @@ public class SpringbootMainApp {
         role1.setName("ROLE_USER");
         Role role2 = new Role();
         role2.setName("ROLE_ADMIN");
-
         Set<Role> setRoles = new LinkedHashSet<>();
         setRoles.add(role1);
         setRoles.add(role2);
